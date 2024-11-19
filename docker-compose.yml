@@ -1,0 +1,11 @@
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mon_mdp
+      POSTGRES_USER: mon_user
+      POSTGRES_DB: ma_bdd
+    ports:
+      - 7000:5432
