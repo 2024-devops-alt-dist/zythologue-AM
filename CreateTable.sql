@@ -120,11 +120,11 @@ VALUES
 
     INSERT INTO category_beer (color, id_category, id_beer)
 VALUES
-    ('Golden', 1, 1), -- IPA associée à "Hoppy IPA"
-    ('Pale Yellow', 2, 2), -- Lager associée à "Golden Lager"
-    ('Dark Brown', 3, 5), -- Stout associée à "Celtic Stout"
-    ('Light Amber', 4, 4), -- Saison associée à "Sakura Saison"
-    ('Hazy Yellow', 5, 3); -- Wheat Beer associée à "Alpine Ale"
+    ('Golden', 1, 1), 
+    ('Pale Yellow', 2, 2), 
+    ('Dark Brown', 3, 5), 
+    ('Light Amber', 4, 4), 
+    ('Hazy Yellow', 5, 3);
 
     INSERT INTO ingredient (name, type)
 VALUES
@@ -160,19 +160,19 @@ VALUES
 
     INSERT INTO favorite (date_added, id_users, id_beer)
 VALUES
-    ('2024-11-20 12:00:00', 1, 1), -- Alice a ajouté "Hoppy IPA" à ses favoris.
-    ('2024-11-19 15:30:00', 2, 2), -- Bob a ajouté "Golden Lager" à ses favoris.
-    ('2024-11-18 10:45:00', 3, 5), -- Charlie a ajouté "Celtic Stout" à ses favoris.
-    ('2024-11-17 11:20:00', 4, 4), -- Diana a ajouté "Sakura Saison" à ses favoris.
-    ('2024-11-16 09:50:00', 5, 3); -- Eve a ajouté "Alpine Ale" à ses favoris.
+    ('2024-11-20 12:00:00', 1, 1), 
+    ('2024-11-19 15:30:00', 2, 2), 
+    ('2024-11-18 10:45:00', 3, 5), 
+    ('2024-11-17 11:20:00', 4, 4), 
+    ('2024-11-16 09:50:00', 5, 3); 
 
     INSERT INTO photos (url, date_uploaded, id_beer)
 VALUES
-    ('https://example.com/photos/hoppy_ipa.jpg', '2024-11-20 13:00:00', 1), -- Photo de "Hoppy IPA"
-    ('https://example.com/photos/golden_lager.jpg', '2024-11-19 16:30:00', 2), -- Photo de "Golden Lager"
-    ('https://example.com/photos/celtic_stout.jpg', '2024-11-18 12:00:00', 5), -- Photo de "Celtic Stout"
-    ('https://example.com/photos/sakura_saison.jpg', '2024-11-17 10:30:00', 4), -- Photo de "Sakura Saison"
-    ('https://example.com/photos/alpine_ale.jpg', '2024-11-16 14:00:00', 3); -- Photo de "Alpine Ale"
+    ('https://example.com/photos/hoppy_ipa.jpg', '2024-11-20 13:00:00', 1), 
+    ('https://example.com/photos/golden_lager.jpg', '2024-11-19 16:30:00', 2),
+    ('https://example.com/photos/celtic_stout.jpg', '2024-11-18 12:00:00', 5), 
+    ('https://example.com/photos/sakura_saison.jpg', '2024-11-17 10:30:00', 4), 
+    ('https://example.com/photos/alpine_ale.jpg', '2024-11-16 14:00:00', 3); 
 
 
 
