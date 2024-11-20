@@ -1,9 +1,12 @@
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
 create table Brewery (
 	id serial primary key,
 	name varchar(100) not null,
 	description text not null,
 	adress varchar(100) not null,
-	country varchar(100) not null,
+	country varchar(100) not null
 );
 
 create table beer (
@@ -20,7 +23,7 @@ create table beer (
 create table category (
     id serial primary key,
     name varchar(100) not null,
-    flavor varchar(100) not null,
+    flavor varchar(100) not null
 );
 
 create table category_beer (
@@ -29,9 +32,15 @@ create table category_beer (
     id_category int not null,
     id_beer int not null,
     constraint fk_category foreign key(id_category) references category(id)
-    on delete cascade
+    on delete cascade,
     constraint fk_beer foreign key(id_beer) references beer(id)
     on delete cascade
+);
+
+create table ingredient (
+    id serial primary key,
+    name varchar(100) not null,
+    type varchar(100) not null
 );
 
 create table ingrdient_beer (
@@ -40,19 +49,12 @@ create table ingrdient_beer (
     id_ingredient int not null,
     id_beer int not null,
     constraint fk_ingredient foreign key(id_ingredient) references ingredient(id)
-    on delete cascade
+    on delete cascade,
     constraint fk_beer foreign key(id_beer) references beer(id)
     on delete cascade
 );
 
-
-create table ingredient (
-    id serial primary key,
-    name varchar(100) not null,
-    type varchar(100) not null,
-);
-
-create table user (
+create table "user" (
     id serial primary key,
     name varchar(100) not null,
     last_name varchar(100) not null,
@@ -68,7 +70,7 @@ create table review (
 	date_created timestamp not null,
 	id_user int not null,
     id_beer int not null,
-	constraint fk_user foreign key(id_user) references user(id)
+	constraint fk_user foreign key(id_user) references "user"(id)
 	on delete cascade,
     constraint fk_beer foreign key(id_beer) references beer(id)
 	on delete cascade
@@ -79,7 +81,7 @@ create table favorite(
     date_added timestamp not null,
     id_users int not null,
     id_beer int not null,
-    constraint fk_users foreign key (id_users) references users(id)
+    constraint fk_users foreign key (id_users) references "user"(id)
     on delete cascade,
     constraint fk_beer foreign key(id_beer) references beer(id)
     on delete cascade
@@ -142,7 +144,7 @@ VALUES
     (70.0, 2, 2), 
     (30.0, 4, 2);
 
-INSERT INTO user (name, last_name, email, password, statut)
+INSERT INTO "user" (name, last_name, email, password, statut)
 VALUES
     ('Alice', 'Smith', 'alice.smith@example.com', 'password123', true),
     ('Bob', 'Johnson', 'bob.johnson@example.com', 'securepass456', true),
