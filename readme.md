@@ -1,3 +1,75 @@
+# 🍺 Application de Gestion des Bières Artisanales
+
+## Contexte du Projet
+
+Ce projet vise à créer une application permettant aux utilisateurs de découvrir, noter et organiser des bières artisanales. L'application permettra aux utilisateurs de sauvegarder leurs bières préférées, de laisser des avis, de visualiser des photos et d'explorer les différentes brasseries, catégories de bières et ingrédients utilisés dans la fabrication des bières.
+
+L'application est construite avec une base de données PostgreSQL pour gérer toutes les informations relatives aux utilisateurs, bières, catégories, brasseries, avis, favoris, photos et ingrédients.
+
+## Prérequis
+
+Avant de pouvoir utiliser l'application, vous devez avoir installé les éléments suivants sur votre machine :
+
+- 🐳 **[Docker](https://www.docker.com/get-started)** : Docker permet de créer des environnements isolés pour vos applications et services.
+- 📦 **[Docker Compose](https://docs.docker.com/compose/install/)** : Outil qui permet de définir et exécuter des applications multi-conteneurs Docker.
+- 🐘 **[PostgreSQL](https://www.postgresql.org/download/)** : Système de gestion de base de données relationnelle utilisé pour stocker les données du projet.
+- 🧑💻 **[DBeaver](https://dbeaver.io/download/)** : Client SQL pour interagir avec votre base de données PostgreSQL.
+
+## Installation
+
+### 1. Clonez le dépôt
+
+Clonez ce projet sur votre machine locale :
+
+```bash
+git clone https://github.com/2024-devops-alt-dist/zythologue-AM
+
+```
+
+### 2. Configurer l'environnement
+
+Avant de démarrer l'application, vous devez créer un fichier `.env` à la racine de votre projet pour définir les identifiants de votre base de données PostgreSQL. 
+
+1. **Créer le fichier `.env`**
+
+   Dans le répertoire racine de votre projet, créez un fichier `.env`.
+
+2. **Définir les variables d'environnement**
+
+   Ajoutez les lignes suivantes dans votre fichier `.env` :
+
+   ```env
+    POSTGRES_USER=mon_user
+    POSTGRES_PASSWORD=mon_mdp
+    POSTGRES_DB=ma_bdd
+    ``` 
+   
+
+3. ** Ajouter le `.env` dans le gitignore**
+
+    Pour éviter que vos identifiants sois sur github, vous devez mettre le fichier `.env` dans le gitignore comme ceci :
+
+    ```bash
+    echo .env >> .gitignore
+    ```
+
+4. Demarrer l'applications avec Docker Compose
+
+Une fois le fichier `.env` configuré et ajouté au .gitignore, vous devez démarrer les services définis dans votre projet avec Docker Compose.
+
+La commande a faire dans `bash` :
+
+```bash
+docker-compose up -d
+```
+
+ Pour vérifier que le conteneur sois bien actif aller sur docker Desktop ou taper la commande dans `bash` :
+
+
+ ```bash
+ docker-compose ps
+```
+---
 # Requêtes SQL
 
 ## 1 - Lister les bières par taux d'alcool, de la plus légère à la plus forte
